@@ -13,11 +13,14 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     widgetletraapellidos.cpp \
-    persona.cpp
+    persona.cpp \
+    dlglistado.cpp
 
 HEADERS  += mainwindow.h \
     widgetletraapellidos.h \
-    persona.h
+    persona.h \
+    dlglistado.h
 
 FORMS    += mainwindow.ui \
-    widgetletraapellidos.ui
+    widgetletraapellidos.ui \
+    dlglistado.ui

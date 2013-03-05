@@ -329,3 +329,8 @@ void MainWindow::clearDatos()
     ui->txtNuevaNota_2->clear();
     loadingData = false;
 }
+
+void MainWindow::on_actionMeses_y_Pagos_triggered()
+{
+
+}

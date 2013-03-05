@@ -61,6 +61,7 @@ private slots:
     void on_btnPagar_pressed();
     void on_btnAddNota_2_pressed();
     void on_txtTelefono_textEdited(const QString &arg1);
+    void on_actionMeses_y_Pagos_triggered();
 };
 
 #endif // MAINWINDOW_H
