@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>426</height>
+    <height>428</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -24,7 +24,16 @@
     <property name="spacing">
      <number>2</number>
     </property>
-    <property name="margin">
+    <property name="leftMargin">
+     <number>2</number>
+    </property>
+    <property name="topMargin">
+     <number>2</number>
+    </property>
+    <property name="rightMargin">
+     <number>2</number>
+    </property>
+    <property name="bottomMargin">
      <number>2</number>
     </property>
     <item>
@@ -51,7 +60,7 @@
          <x>9</x>
          <y>0</y>
          <width>471</width>
-         <height>427</height>
+         <height>429</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -296,7 +305,7 @@
      <x>0</x>
      <y>0</y>
      <width>600</width>
-     <height>21</height>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_Archivo">
@@ -312,8 +321,15 @@
     <addaction name="action_Nueva"/>
     <addaction name="action_Borrar"/>
    </widget>
+   <widget class="QMenu" name="menuListados">
+    <property name="title">
+     <string>Listados</string>
+    </property>
+    <addaction name="actionPagos"/>
+   </widget>
    <addaction name="menu_Archivo"/>
    <addaction name="menu_Personas"/>
+   <addaction name="menuListados"/>
   </widget>
   <action name="action_Guardar">
    <property name="text">
@@ -338,6 +354,11 @@
   <action name="action_Guardar_2">
    <property name="text">
     <string>&amp;Guardar</string>
+   </property>
+  </action>
+  <action name="actionPagos">
+   <property name="text">
+    <string>Pagos...</string>
    </property>
   </action>
  </widget>

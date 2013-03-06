@@ -6,7 +6,9 @@
 #include "persona.h"
 #include <QCloseEvent>
 #include "widgetletraapellidos.h"
-
+#include <boost/shared_ptr.hpp>
+#include "pago.h"
+#include "dlglistado.h"
 
 namespace Ui {
 class MainWindow;
@@ -41,6 +43,9 @@ private:
 
     void clearDatos();
 
+    PagoLst obtenerPagos(int mes, int anio);
+    DlgListado *listado;
+
 protected:
     void closeEvent(QCloseEvent *evt);
 
@@ -61,7 +66,8 @@ private slots:
     void on_btnPagar_pressed();
     void on_btnAddNota_2_pressed();
     void on_txtTelefono_textEdited(const QString &arg1);
-    void on_actionMeses_y_Pagos_triggered();
+    void requestForData(int Year, int Month);
+    void on_actionPagos_triggered();
 };
 
 #endif // MAINWINDOW_H

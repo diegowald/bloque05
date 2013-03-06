@@ -3,6 +3,7 @@
 #include <QFile>
 #include <QMessageBox>
 #include <QDateTime>
+#include <boost/make_shared.hpp>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -17,6 +18,8 @@ MainWindow::MainWindow(QWidget *parent) :
     dbDirty = false;
     loadingData = false;
     persona = NULL;
+    listado = new DlgListado(this);
+    connect(listado, SIGNAL(requestForData(int,int)), this, SLOT(requestForData(int,int)));
 }
 
 MainWindow::~MainWindow()
@@ -330,7 +333,23 @@ void MainWindow::clearDatos()
     loadingData = false;
 }
 
-void MainWindow::on_actionMeses_y_Pagos_triggered()
+void MainWindow::requestForData(int Year, int Month)
 {
+    listado->setData(obtenerPagos(Month, Year));
+}
 
+PagoLst MainWindow::obtenerPagos(int mes, int anio)
+{
+    PagoLst result = boost::make_shared<QList<PagoPtr> >();
+    foreach(Persona *p, personas)
+    {
+        PagoPtr pagoPersona = p->getPago(mes, anio);
+        result->push_back(pagoPersona);
+    }
+    return result;
+}
+
+void MainWindow::on_actionPagos_triggered()
+{
+    listado->exec();
 }

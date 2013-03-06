@@ -1,4 +1,8 @@
 #include "persona.h"
+#include <QString>
+#include <QStringList>
+#include <QDebug>
+#include <boost/make_shared.hpp>
 
 Persona::Persona(QObject *parent) :
     QObject(parent)
@@ -75,6 +79,30 @@ void Persona::setTelefono(QString &newTelefono)
 {
     telefono = newTelefono;
 }
+
+PagoPtr Persona::tryParse(QString &s)
+{
+    PagoPtr p = boost::make_shared<Pago>(NombreCompleto());
+    p->parse(s);
+    return (p->isValid() ? p : PagoPtr());
+    //"05/12/2012 20:43 : Mes Diciembre PAGADO"
+}
+
+PagoPtr Persona::getPago(int mes, int anio)
+{
+    QStringList records = notas.split('\n', QString::SkipEmptyParts);
+    foreach(QString rec, records)
+    {
+        PagoPtr p = tryParse(rec);
+        if (p != PagoPtr())
+        {
+            if (p->isValid() && (p->mes() == mes && p->anio() == anio))
+                return p;
+        }
+    }
+    return PagoPtr();
+}
+
 
 QDataStream &operator <<(QDataStream &stream, Persona &p)
 {

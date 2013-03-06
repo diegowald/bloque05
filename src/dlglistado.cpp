@@ -12,3 +12,12 @@ DlgListado::~DlgListado()
 {
     delete ui;
 }
+
+void DlgListado::on_btnBuscar_pressed()
+{
+    emit requestForData(ui->spinYear->value(), ui->cboMeses->itemData(ui->cboMeses->currentIndex(), Qt::UserRole).toInt());
+}
+
+void DlgListado::setData(PagoLst data)
+{
+}

@@ -14,12 +14,14 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     widgetletraapellidos.cpp \
     persona.cpp \
-    dlglistado.cpp
+    dlglistado.cpp \
+    pago.cpp
 
 HEADERS  += mainwindow.h \
     widgetletraapellidos.h \
     persona.h \
-    dlglistado.h
+    dlglistado.h \
+    pago.h
 
 FORMS    += mainwindow.ui \
     widgetletraapellidos.ui \

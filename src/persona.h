@@ -2,6 +2,7 @@
 #define PERSONA_H
 
 #include <QObject>
+#include "pago.h"
 
 class Persona : public QObject
 {
@@ -30,6 +31,9 @@ public:
 
     QString LetraApellido();
     QString NombreCompleto();
+
+    PagoPtr getPago(int mes, int anio);
+    PagoPtr tryParse(QString &s);
 
     friend QDataStream &operator <<(QDataStream &stream, Persona &p);
     friend QDataStream &operator >>(QDataStream &stream, Persona &p);
