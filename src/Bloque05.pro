@@ -9,6 +9,9 @@ QT       += core gui
 TARGET = Bloque05
 TEMPLATE = app
 
+win32 {
+INCLUDEPATH += c:/boost/boost_1_53_0
+}
 
 SOURCES += main.cpp\
         mainwindow.cpp \

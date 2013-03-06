@@ -30,7 +30,7 @@ void widgetLetraApellidos::clearContents()
     ui->listWidget->clear();
 }
 
-void widgetLetraApellidos::on_listWidget_clicked(const QModelIndex &index)
+void widgetLetraApellidos::on_listWidget_clicked(const QModelIndex &)
 {
     emit personaSeleccionada(ui->listWidget->selectedItems().at(0)->text());
 }

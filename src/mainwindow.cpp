@@ -160,7 +160,7 @@ void MainWindow::on_action_Borrar_triggered()
                                       QMessageBox::Yes,
                                       QMessageBox::No | QMessageBox::Default | QMessageBox::Escape);
 
-        if (r = QMessageBox::Yes)
+        if (r == QMessageBox::Yes)
         {
             QString key = persona->NombreCompleto();
             QString letra = persona->LetraApellido();
@@ -254,7 +254,7 @@ void MainWindow::on_txtNotas_textChanged()
         dirty = true;
 }
 
-void MainWindow::on_txtTelefono_textEdited(const QString &arg1)
+void MainWindow::on_txtTelefono_textEdited(const QString &)
 {
     if (!loadingData)
         dirty = true;

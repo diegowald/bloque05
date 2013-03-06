@@ -1,0 +1,13 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\widgetletraapellidos.o
+./debug\persona.o
+./debug\dlglistado.o
+./debug\pago.o
+./debug\moc_mainwindow.o
+./debug\moc_widgetletraapellidos.o
+./debug\moc_persona.o
+./debug\moc_dlglistado.o
+./debug\moc_pago.o
+);
