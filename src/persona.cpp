@@ -1,7 +1,6 @@
 #include "persona.h"
 #include <QString>
 #include <QStringList>
-#include <QDebug>
 #include <boost/make_shared.hpp>
 
 Persona::Persona(QObject *parent) :

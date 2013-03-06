@@ -1,5 +1,4 @@
 #include "pago.h"
-#include <QDebug>
 
 Pago::Pago(QString NombreCompleto, QObject *parent) :
     QObject(parent)
@@ -41,17 +40,14 @@ void Pago::parse(QString &s)
 {
     QString Fecha = s.mid(0, 16);
     QStringList partes = s.mid(17).split(' ', QString::SkipEmptyParts);
-    qDebug() << Fecha;
-    qDebug() << partes;
     if (partes.count() == 4)
     {
         QString m = partes.at(2);
         MesPago = Mes2int(m);
         IsValid = (MesPago == -1) ? false : true;
     }
-    qDebug() << partes.at(2);
-    QDateTime date = QDateTime::fromString(Fecha, "dd/MM/yyyy hh:mm");
-    AnioPago = date.date().year();
+    FechaPago = QDateTime::fromString(Fecha, "dd/MM/yyyy hh:mm");
+    AnioPago = FechaPago.date().year();
     //"05/12/2012 20:43 : Mes Diciembre PAGADO"
 }
 

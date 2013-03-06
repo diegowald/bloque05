@@ -344,7 +344,8 @@ PagoLst MainWindow::obtenerPagos(int mes, int anio)
     foreach(Persona *p, personas)
     {
         PagoPtr pagoPersona = p->getPago(mes, anio);
-        result->push_back(pagoPersona);
+        if (pagoPersona.get())
+            result->push_back(pagoPersona);
     }
     return result;
 }
