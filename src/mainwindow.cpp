@@ -3,7 +3,7 @@
 #include <QFile>
 #include <QMessageBox>
 #include <QDateTime>
-#include <boost/make_shared.hpp>
+//#include <boost/make_shared.hpp>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -340,11 +340,12 @@ void MainWindow::requestForData(int Year, int Month)
 
 PagoLst MainWindow::obtenerPagos(int mes, int anio)
 {
-    PagoLst result = boost::make_shared<QList<PagoPtr> >();
+    PagoLst result = PagoLst::create();//  boost::make_shared<QList<PagoPtr> >();
     foreach(Persona *p, personas)
     {
         PagoPtr pagoPersona = p->getPago(mes, anio);
-        if (pagoPersona.get())
+        //if (pagoPersona.get())
+        if (!pagoPersona.isNull())
             result->push_back(pagoPersona);
     }
     return result;

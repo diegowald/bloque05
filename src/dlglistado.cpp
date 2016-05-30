@@ -51,6 +51,6 @@ void DlgListado::setData(PagoLst data)
         item = new QTableWidgetItem(pago->nombrePersona());
         ui->tblListado->setItem(ui->tblListado->rowCount() - 1, 1, item);
     }
-    ui->tblListado->horizontalHeader()->setResizeMode(QHeaderView::ResizeToContents);
+    //ui->tblListado->horizontalHeader()->setResizeMode(QHeaderView::ResizeToContents);
     ui->tblListado->horizontalHeader()->setStretchLastSection(true);
 }

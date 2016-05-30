@@ -6,7 +6,7 @@
 #include "persona.h"
 #include <QCloseEvent>
 #include "widgetletraapellidos.h"
-#include <boost/shared_ptr.hpp>
+//#include <boost/shared_ptr.hpp>
 #include "pago.h"
 #include "dlglistado.h"
 

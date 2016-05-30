@@ -3,13 +3,16 @@
 
 #include <QObject>
 #include <QDate>
-#include <boost/shared_ptr.hpp>
+//#include <boost/shared_ptr.hpp>
 #include <QString>
 #include <QStringList>
 
 class Pago;
-typedef boost::shared_ptr<Pago> PagoPtr;
-typedef boost::shared_ptr<QList<PagoPtr> > PagoLst;
+//typedef boost::shared_ptr<Pago> PagoPtr;
+typedef QSharedPointer<Pago> PagoPtr;
+//typedef boost::shared_ptr<QList<PagoPtr> > PagoLst;
+typedef QSharedPointer<QList<PagoPtr>> PagoLst;
+
 
 class Pago : public QObject
 {

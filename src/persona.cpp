@@ -1,7 +1,8 @@
 #include "persona.h"
 #include <QString>
 #include <QStringList>
-#include <boost/make_shared.hpp>
+//#include <boost/make_shared.hpp>
+#include <QSharedPointer>
 
 Persona::Persona(QObject *parent) :
     QObject(parent)
@@ -81,7 +82,8 @@ void Persona::setTelefono(QString &newTelefono)
 
 PagoPtr Persona::tryParse(QString &s)
 {
-    PagoPtr p = boost::make_shared<Pago>(NombreCompleto());
+    //PagoPtr p = boost::make_shared<Pago>(NombreCompleto());
+    PagoPtr p = PagoPtr::create(NombreCompleto());
     p->parse(s);
     return (p->isValid() ? p : PagoPtr());
     //"05/12/2012 20:43 : Mes Diciembre PAGADO"
